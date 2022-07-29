@@ -11,16 +11,17 @@ pipeline {
 			}	
 		}
 
-		stage ('Deploy') {
+		stage ('Build') {
 			steps {
-				echo "Deploy"
+				echo "Pack"
 				sh 'mvn clean package'
 			}	
 		}		
 
-		stage ('Test') {
+		stage ('Deploy') {
 			steps { 
-				echo "final test"
+				echo "final step"
+				sh 'java -jar target/*.jar'
 			}
 		}
 	}
