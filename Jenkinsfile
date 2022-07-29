@@ -7,6 +7,7 @@ pipeline {
 		stage ('SCM') {
 			steps {
 				echo "git pull my code"
+				git 'https://github.com/Ddhruv-IOT/Jenkins-repo-1'
 			}	
 		}
 
